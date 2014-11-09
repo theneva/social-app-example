@@ -23,5 +23,5 @@ angular.module('app').controller('PostsController', function ($scope, PostsServi
             .error(function (err) {
                 console.log(err);
             });
-    }
+    };
 });

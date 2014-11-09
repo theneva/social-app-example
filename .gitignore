@@ -76,3 +76,7 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+
+### Project specific files ###
+assets/

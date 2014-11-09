@@ -5,5 +5,5 @@ angular.module('app').service('PostsService', function($http) {
 
     this.create = function(post) {
         return $http.post('/api/posts', post);
-    }
+    };
 });

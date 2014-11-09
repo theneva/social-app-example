@@ -1,8 +1,17 @@
+var fs = require('fs');
 var gulp = require('gulp');
-var concat = require('gulp-concat');
+var nodemon = require('gulp-nodemon');
 
-gulp.task('js', function () {
-    gulp.src(['ng/modules.js', 'ng/**/*.js'])
-        .pipe(concat('app.js'))
-        .pipe(gulp.dest('assets'));
+fs.readdirSync(__dirname + '/gulp').forEach(function (task) {
+    require('./gulp/' + task);
 });
+
+gulp.task('dev:server', function () {
+    nodemon({
+        script: 'server.js',
+        ext: 'js',
+        ignore: ['ng*', 'gulp*', 'assets*']
+    });
+});
+
+gulp.task('dev', ['watch:js', 'watch:css', 'dev:server']);
