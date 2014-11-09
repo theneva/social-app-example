@@ -3,6 +3,8 @@
   "dependencies": {
     "body-parser": "^1.9.2",
     "express": "^4.10.1",
+    "gulp": "^3.8.10",
+    "gulp-concat": "^2.4.1",
     "mongoose": "^3.8.18",
     "morgan": "^1.5.0"
   }

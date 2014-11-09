@@ -1,6 +1,5 @@
-var app = angular.module('app', []);
-app.controller('PostsController', function ($scope, $http) {
-    $http.get('/api/posts')
+angular.module('app').controller('PostsController', function ($scope, PostsService) {
+    PostsService.fetch()
         .success(function (posts) {
             $scope.posts = posts;
         });
@@ -16,7 +15,7 @@ app.controller('PostsController', function ($scope, $http) {
             body: $scope.postBody
         };
 
-        $http.post('/api/posts', post)
+        PostsService.create(post)
             .success(function (post) {
                 $scope.posts.unshift(post);
                 $scope.postBody = null;

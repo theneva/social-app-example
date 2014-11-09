@@ -4,7 +4,7 @@ var app = express();
 app.use(bodyParser.json());
 
 // Enable loading javascript files.
-app.use('/js', express.static(__dirname + '/js'));
+app.use('/assets', express.static(__dirname + '/assets'));
 app.use('/css', express.static(__dirname + '/css'));
 app.use('/lib', express.static(__dirname + '/lib'));
 
