@@ -5,7 +5,6 @@ app.use(bodyParser.json());
 
 // Enable loading javascript files.
 app.use('/assets', express.static(__dirname + '/assets'));
-app.use('/css', express.static(__dirname + '/css'));
 app.use('/lib', express.static(__dirname + '/lib'));
 
 // Enable CORS and communicating over JSON
@@ -17,11 +16,13 @@ app.use(function (req, res, next) {
     next();
 });
 
-// Set up posts API.
-app.use('/api/posts', require('./controller/api/posts'));
+// Mount API controllers.
+app.use('/api/posts', require('./controllers/api/posts'));
+app.use('/api/sessions', require('./controllers/api/sessions'));
+app.use('/api/users', require('./controllers/api/users'));
 
 // Set up Angular app.
-app.use('/', require('./controller/static.js'));
+app.use('/', require('./controllers/static.js'));
 
 var port = 3001;
 app.listen(port, function () {

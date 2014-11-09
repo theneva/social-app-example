@@ -14,4 +14,4 @@ gulp.task('dev:server', function () {
     });
 });
 
-gulp.task('dev', ['watch:js', 'watch:css', 'dev:server']);
+gulp.task('dev', ['watch:js', 'watch:style', 'dev:server']);

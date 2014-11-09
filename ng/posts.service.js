@@ -1,9 +1,9 @@
-angular.module('app').service('PostsService', function($http) {
-    this.fetch = function() {
+angular.module('app').service('PostsService', function ($http) {
+    this.fetch = function () {
         return $http.get('/api/posts');
     };
 
-    this.create = function(post) {
+    this.create = function (post) {
         return $http.post('/api/posts', post);
     };
 });
